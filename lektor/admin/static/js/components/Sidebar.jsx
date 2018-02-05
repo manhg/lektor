@@ -201,10 +201,15 @@ class Sidebar extends RecordComponent {
     const title = this.state.isAttachment
       ? i18n.trans('ATTACHMENT_ACTIONS')
       : i18n.trans('PAGE_ACTIONS')
+      
+    const guide = this.state.isAttachment
+      ? '更新の際はここを削除して、新しいアタッチメントを追加してください。'
+      : ''
 
     return (
       <div key='actions' className='section'>
         <h3>{title}</h3>
+        <span>{guide}</span>
         <ul className='nav'>
           {links}
           {deleteLink}
