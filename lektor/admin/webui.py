@@ -13,7 +13,7 @@ from lektor.reporter import CliReporter
 
 class LektorInfo(object):
 
-    def __init__(self, env, output_path, ui_lang='en', extra_flags=None,
+    def __init__(self, env, output_path, ui_lang='ja', extra_flags=None,
                  verbosity=0):
         self.env = env
         self.ui_lang = ui_lang

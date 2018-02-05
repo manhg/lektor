@@ -329,7 +329,7 @@ class Sidebar extends RecordComponent {
       const urlPath = this.getUrlRecordPathWithAlt(atch.path)
       return (
         <li key={atch.id}>
-          <Link to={`${urlPath}/edit`}>
+          <Link to={`${urlPath}/preview`}>
             {atch.id} ({atch.type})</Link>
         </li>
       )
