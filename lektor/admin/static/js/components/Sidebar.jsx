@@ -184,16 +184,6 @@ class Sidebar extends RecordComponent {
         {i18n.trans('PREVIEW')}</Link></li>
     )
 
-    if (this.state.recordExists) {
-      links.push(
-        <li key='fs-open'>
-          <a href='#' onClick={this.fsOpen.bind(this)}>
-            {getBrowseButtonTitle()}
-          </a>
-        </li>
-      )
-    }
-
     if (this.state.canHaveChildren) {
       links.push(
         <li key='add-child'><Link to={`${urlPath}/add-child`}>
@@ -315,7 +305,10 @@ class Sidebar extends RecordComponent {
 
     return (
       <div key='children' className='section'>
-        <h3>{i18n.trans('CHILD_PAGES')}</h3>
+        <h3>
+            <i className='fa fa-newspaper'></i>
+            <span>{i18n.trans('CHILD_PAGES')}</span>
+        </h3>
         <ul className='nav record-children'>
           {this.renderChildPagination()}
           {items}
@@ -330,7 +323,9 @@ class Sidebar extends RecordComponent {
       return (
         <li key={atch.id}>
           <Link to={`${urlPath}/preview`}>
-            {atch.id} ({atch.type})</Link>
+            {atch.id}
+            </Link>
+            <img src={atch.path} />
         </li>
       )
     })
@@ -345,7 +340,10 @@ class Sidebar extends RecordComponent {
 
     return (
       <div key='attachments' className='section'>
-        <h3>{i18n.trans('ATTACHMENTS')}</h3>
+        <h3>
+          <i className='fa fa-image'></i>
+          <span>{i18n.trans('ATTACHMENTS')}</span>
+        </h3>
         <ul className='nav record-attachments'>
           {items}
         </ul>

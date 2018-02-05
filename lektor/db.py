@@ -379,7 +379,7 @@ class Record(SourceObject):
 
     def get_fallback_record_label(self, lang):
         if not self['_id']:
-            return '(Index)'
+            return '(トップ)'
         return self['_id'].replace('-', ' ').replace('_', ' ').title()
 
     def get_record_label_i18n(self):

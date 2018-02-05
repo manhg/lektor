@@ -92,7 +92,7 @@
 
 // Fix up breadcrumbs
 .breadcrumb > li + li:before {
-  content: "∕";
+  content: "＞ ";
   color: #555;
 }
 
@@ -145,4 +145,27 @@
     top: 0;
     width: 45%;
   }
+}
+
+
+div.application header .record-crumb a {
+    display: inline-block;
+    padding: 0.2em 1em;
+    text-decoration: none;
+    background: yellow;
+    color: black;
+    
+    &:hover {
+        color: black;
+        opacity: 0.8;
+    }
+}
+
+.new-record-crumb a {
+    padding: 0.2em 1em;
+}
+
+.record-attachments img {
+    width: 100%;
+    display: block;
 }
