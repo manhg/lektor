@@ -240,8 +240,8 @@ class FtpConnection(object):
         credentials = credentials or {}
         self.con = self.make_connection()
         self.url = url
-        self.username = credentials.get('username') or url.username
-        self.password = credentials.get('password') or url.password
+        self.username = credentials.get('username') or os.environ.get('LEKTOR_DEPLOY_USERNAME') or url.username
+        self.password = credentials.get('password') or os.environ.get('LEKTOR_DEPLOY_PASSWORD') or url.password
         self.log_buffer = []
         self._known_folders = set()
 
